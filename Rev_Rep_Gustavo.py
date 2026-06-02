@@ -55,19 +55,28 @@ print(f'Menor altura do grupo:{formatValue(minHeight)}m.\nMaior altura do grupo:
 # Calcule a quantidade de números pares e ímpares, a média de valores pares e a
 # média geral dos números lidos. O número que encerrará a leitura será zero.
 
-""" evenNums = 0
-oddNums = 0
+nums = evenNums = oddNums = sumEvenNums = sumNums = 0
 while True:
     while True:
-        userNumber = int(input('---Digite 0 para sair---\nDigite um numero positivo: '))
-        if userNumber >= 0: break
+        userInput = int(input('---Digite 0 para sair---\nDigite um numero positivo: '))
+        if userInput >= 0: break
 
-    if userNumber % 2 == 0 and userNumber != 0 : evenNums += 1
-    elif userNumber != 0: oddNums += 1
+    if userInput % 2 == 0 and userInput != 0:
+        nums += 1
+        evenNums += 1
+        sumEvenNums += userInput
+        sumNums += userInput
+    elif userInput != 0:
+        nums += 1
+        oddNums += 1
+        sumNums += userInput
 
-    if userNumber == 0: break
+    if userInput == 0: break
 
-print(f'Numeros pares: {evenNums}\nNumeros Impares: {oddNums}') """
+avgNums = sumNums / nums
+avgEvenNums = sumEvenNums / evenNums
+
+print(f'Numeros pares: {evenNums}\nNumeros Impares: {oddNums}\nMedia numeros pares: {avgEvenNums}\nMedia de todos os numeros: {avgNums}')
 
 
 # ----------------------------------------------------------------------------------
